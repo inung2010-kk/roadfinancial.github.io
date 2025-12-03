@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Financial - IT Solution & Global eSIM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rfNavy: '#0A192F', // Road Financial Navy (IT/Trust)
+                        rfTeal: '#64FFDA', // Road Financial Teal (Connect/Travel)
+                        rfLight: '#CCD6F6',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+
+        // 모달 제어 JavaScript 함수
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.classList.add('overflow-hidden'); // 배경 스크롤 방지
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .scroll-smooth { behavior: smooth; }
+        /* 모달 배경을 위한 추가 스타일 */
+        .modal-bg { background-color: rgba(0, 0, 0, 0.7); }
+    </style>
+</head>
+<body class="font-sans text-slate-800 scroll-smooth">
+
+    <nav class="fixed w-full z-50 bg-rfNavy/95 backdrop-blur-sm text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-road text-rfTeal"></i> ROAD <span class="text-rfTeal">FINANCIAL</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-rfLight">
+                <a href="#about" class="hover:text-rfTeal transition">About Us</a>
+                <a href="#it-service" class="hover:text-rfTeal transition">IT Solution</a>
+                <a href="#esim" class="hover:text-rfTeal transition">Road eSIM</a>
+                <a href="#contact" class="px-4 py-2 border border-rfTeal text-rfTeal rounded hover:bg-rfTeal/10 transition">Contact</a>
+            </div>
+            <button class="md:hidden text-rfTeal text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero-bg h-screen flex items-center justify-center text-center text-white px-4 pt-16">
+        <div class="max-w-4xl">
+            <p class="text-rfTeal font-medium mb-4 tracking-widest">CONNECTING BUSINESS & TRAVEL</p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Digital Road <br> to the World.
+            </h1>
+            <p class="text-rfLight text-lg mb-10 max-w-2xl mx-auto">
+                Road Financial은 기업을 위한 IT 서비스 컨설팅과 여행자를 위한 글로벌 데이터 서비스를 제공합니다. 기술과 이동의 자유, 우리가 연결합니다.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#it-service" class="px-8 py-4 bg-transparent border-2 border-rfTeal text-rfTeal font-bold rounded hover:bg-rfTeal/10 transition w-full md:w-auto">
+                    IT 컨설팅 의뢰하기
+                </a>
+                <a href="#esim" class="px-8 py-4 bg-rfTeal text-rfNavy font-bold rounded shadow-lg hover:bg-teal-400 transition w-full md:w-auto">
+                    <i class="fa-solid fa-plane-departure mr-2"></i> eSIM 문의하기
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="it-service" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-rfNavy mb-4">IT Digital Solutions</h2>
+                <div class="w-16 h-1 bg-rfTeal mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600">최고의 기술력과 안정성을 갖춘 IT 인프라를 구축하고 운영합니다.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition duration-300">
+                    <div class="w-14 h-14 bg-rfNavy rounded-full flex items-center justify-center text-rfTeal text-2xl mb-6">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">SI & System Integration</h3>
+                    <p class="text-gray-500 leading-relaxed">기업 맞춤형 ERP, CRM 구축 및 레거시 시스템의 현대화를 지원합니다.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition duration-300 border-b-4 border-rfNavy">
+                    <div class="w-14 h-14 bg-rfNavy rounded-full flex items-center justify-center text-rfTeal text-2xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cloud & Security Consulting</h3>
+                    <p class="text-gray-500 leading-relaxed">기업 환경에 최적화된 클라우드 전환 및 최고 수준의 정보 보안 컨설팅을 제공합니다.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition duration-300">
+                    <div class="w-14 h-14 bg-rfNavy rounded-full flex items-center justify-center text-rfTeal text-2xl mb-6">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web/App Development</h3>
+                    <p class="text-gray-500 leading-relaxed">비즈니스 목적에 맞는 반응형 웹사이트와 모바일 애플리케이션을 개발합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="esim" class="py-20 bg-rfNavy text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <span class="text-rfTeal font-bold tracking-widest text-sm">TRAVEL SMART</span>
+                    <h2 class="text-3xl font-bold mt-2">Global Road eSIM</h2>
+                    <p class="text-rfLight mt-2">QR코드 스캔 한 번으로 전 세계 어디서나 데이터를 연결하세요. (가격은 문의 후 책정)</p>
+                </div>
+                <a href="#inquiry" class="hidden md:inline-block text-rfTeal hover:underline mt-4 md:mt-0">견적 요청하기 &rarr;</a>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="group relative overflow-hidden rounded-xl bg-gray-800 border border-gray-700 hover:border-rfTeal transition">
+                    <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop" alt="Japan" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg">일본 (Japan)</h3>
+                            <span class="bg-rfTeal text-rfNavy text-xs px-2 py-1 rounded font-bold">BEST</span>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">매일 2GB / 3일 ~ 30일</p>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-rfTeal font-bold mb-2">대량 구매 문의</p>
+                            <a href="#inquiry" class="block w-full bg-rfTeal/20 text-rfTeal font-bold py-2 rounded text-sm hover:bg-rfTeal/30 transition">견적 요청하기</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl bg-gray-800 border border-gray-700 hover:border-rfTeal transition">
+                    <img src="https://images.unsplash.com/photo-1557750255-c76072a7bb6d?q=80&w=2070&auto=format&fit=crop" alt="Vietnam" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg">베트남 (Vietnam)</h3>
+                            <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded font-bold">HOT</span>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">무제한 데이터 / 5일</p>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-rfTeal font-bold mb-2">대량 구매 문의</p>
+                            <a href="#inquiry" class="block w-full bg-rfTeal/20 text-rfTeal font-bold py-2 rounded text-sm hover:bg-rfTeal/30 transition">견적 요청하기</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl bg-gray-800 border border-gray-700 hover:border-rfTeal transition">
+                    <img src="https://images.unsplash.com/photo-1471623432079-b009d30b6729?q=80&w=2070&auto=format&fit=crop" alt="Europe" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg">유럽 33개국</h3>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">통합 데이터 / 15일</p>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-rfTeal font-bold mb-2">대량 구매 문의</p>
+                            <a href="#inquiry" class="block w-full bg-rfTeal/20 text-rfTeal font-bold py-2 rounded text-sm hover:bg-rfTeal/30 transition">견적 요청하기</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="group relative overflow-hidden rounded-xl bg-gray-800 border border-gray-700 hover:border-rfTeal transition">
+                    <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=2099&auto=format&fit=crop" alt="USA" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg">미국 (USA)</h3>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">T-Mobile망 / 10일</p>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-rfTeal font-bold mb-2">대량 구매 문의</p>
+                            <a href="#inquiry" class="block w-full bg-rfTeal/20 text-rfTeal font-bold py-2 rounded text-sm hover:bg-rfTeal/30 transition">견적 요청하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gray-800/50 p-8 rounded-xl border border-gray-700 flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold text-white mb-2">어떻게 사용하나요?</h3>
+                    <p class="text-gray-400">유심 교체 없이, 이메일로 받은 QR코드만 스캔하면 즉시 개통됩니다.</p>
+                </div>
+                <div class="flex gap-8 text-center">
+                    <div>
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-2 text-rfTeal">1</div>
+                        <span class="text-sm text-gray-300">상품 문의</span>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-2 text-rfTeal">2</div>
+                        <span class="text-sm text-gray-300">QR 수신</span>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-2 text-rfTeal">3</div>
+                        <span class="text-sm text-gray-300">스캔/사용</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inquiry" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-rfTeal font-bold tracking-widest text-sm uppercase">Partner with Us</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-rfNavy mt-2 mb-6">프로젝트를 시작하거나<br>파트너가 되어보세요.</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        IT 시스템 구축부터 기업용 데이터 솔루션까지.<br>
+                        Road Financial의 전문가들이 24시간 이내에 답변을 드립니다.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-rfNavy/10 flex items-center justify-center text-rfNavy">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-gray-800">이메일 문의</h4>
+                                <p class="text-gray-500 text-sm">support@roadfinancial.co.kr</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <form onsubmit="alert('문의가 성공적으로 접수되었습니다.\n담당자가 확인 후 연락드리겠습니다.'); return false;">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">이름 (담당자명)</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-rfNavy focus:bg-white focus:outline-none transition" placeholder="홍길동">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">연락처</label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-rfNavy focus:bg-white focus:outline-none transition" placeholder="010-0000-0000">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">문의 유형</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-rfNavy focus:bg-white focus:outline-none transition cursor-pointer">
+                                <option>IT 시스템 구축 및 컨설팅 문의</option>
+                                <option>클라우드/보안 시스템 문의</option>
+                                <option>eSIM 기업/단체 대량 구매</option>
+                                <option>기타 제휴 문의</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">회사명 (선택)</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-rfNavy focus:bg-white focus:outline-none transition" placeholder="Road Financial">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">문의 내용</label>
+                            <textarea required rows="4" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-rfNavy focus:bg-white focus:outline-none transition" placeholder="프로젝트 예산, 일정, 혹은 필요하신 수량을 적어주세요."></textarea>
+                        </div>
+
+                        <div class="mb-6 flex items-center">
+                            <input type="checkbox" id="privacy-check" required class="w-4 h-4 text-rfNavy border-gray-300 rounded focus:ring-rfNavy">
+                            <label for="privacy-check" class="ml-2 text-sm text-gray-500">
+                                <a href="javascript:void(0)" onclick="openModal('privacyModal')" class="underline hover:text-rfNavy">개인정보 처리방침</a>에 동의합니다.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-rfNavy text-white font-bold py-4 rounded-lg hover:bg-gray-800 transition duration-300 shadow-lg">
+                            문의하기
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-black text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-white text-xl font-bold mb-4">Road Financial</h3>
+                <p class="mb-4 text-sm leading-relaxed max-w-sm">
+                    IT 서비스의 전문성과 여행의 즐거움을 연결합니다.<br>
+                    안정적인 비즈니스 파트너이자,<br> 
+                    든든한 여행 메이트가 되겠습니다.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-rfTeal"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                    <a href="#" class="hover:text-rfTeal"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                    <a href="#" class="hover:text-rfTeal"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Contact Us</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fa-solid fa-envelope mr-2"></i> support@roadfinancial.co.kr</li>
+                    <li><i class="fa-solid fa-location-dot mr-2"></i> 서울특별시 강남구 테헤란로 123</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Services</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-rfTeal">IT 컨설팅 문의</a></li>
+                    <li><a href="#" class="hover:text-rfTeal">eSIM 대량 구매 (B2B)</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('termsModal')" class="hover:text-rfTeal">이용약관</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('privacyModal')" class="hover:text-rfTeal">개인정보처리방침</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-12 pt-8 border-t border-gray-800 text-xs">
+            &copy; 2024 Road Financial Co., Ltd. All rights reserved.
+        </div>
+    </footer>
+
+
+    <div id="termsModal" class="hidden fixed inset-0 z-50 overflow-y-auto modal-bg flex items-center justify-center p-4" onclick="closeModal('termsModal')">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-full overflow-y-auto p-8" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center border-b pb-4 mb-4">
+                <h3 class="text-2xl font-bold text-rfNavy">이용약관 (Terms of Service)</h3>
+                <button onclick="closeModal('termsModal')" class="text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="prose max-w-none text-gray-700">
+                <h4 class="text-lg font-bold mt-6 mb-2 text-rfNavy">1. 한국어 약관</h4>
+                <p class="text-sm">본 약관은 Road Financial (이하 '회사')이 제공하는 IT 서비스 및 eSIM 데이터 서비스 이용에 관한 권리, 의무 및 책임 사항을 규정함을 목적으로 합니다.</p>
+                
+                <h5 class="font-semibold text-base mt-4">제1조 (목적)</h5>
+                <p class="text-sm">본 약관은 Road Financial이 제공하는 서비스 이용에 관한 권리, 의무 및 책임 사항을 규정함을 목적으로 합니다.</p>
+                
+                <h5 class="font-semibold text-base mt-4">제4조 (eSIM 서비스 특성)</h5>
+                <p class="text-sm">eSIM 상품은 디지털 상품으로, 구매 후 QR 코드가 발송된 이후에는 상품 특성상 청약 철회(환불)가 제한될 수 있습니다. 자세한 환불 규정은 eSIM 구매 페이지를 참고해 주십시오.</p>
+
+                <hr class="my-6">
+
+                <h4 class="text-lg font-bold mt-6 mb-2 text-rfNavy">2. English Terms</h4>
+                <p class="text-sm">These Terms govern the rights, obligations, and responsibilities related to the use of IT services and eSIM data services provided by Road Financial (hereinafter referred to as the 'Company').</p>
+
+                <h5 class="font-semibold text-base mt-4">Article 1 (Purpose)</h5>
+                <p class="text-sm">These Terms aim to regulate the rights, obligations, and responsibilities concerning the use of services provided by Road Financial.</p>
+
+                <h5 class="font-semibold text-base mt-4">Article 4 (eSIM Service Specifics)</h5>
+                <p class="text-sm">eSIM products are digital goods. Due to the nature of the product, revocation of the offer (refund) may be limited immediately upon dispatch of the QR code after purchase. Please refer to the eSIM purchase page for detailed refund policies.</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="privacyModal" class="hidden fixed inset-0 z-50 overflow-y-auto modal-bg flex items-center justify-center p-4" onclick="closeModal('privacyModal')">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-full overflow-y-auto p-8" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center border-b pb-4 mb-4">
+                <h3 class="text-2xl font-bold text-rfNavy">개인정보처리방침 (Privacy Policy)</h3>
+                <button onclick="closeModal('privacyModal')" class="text-gray-500 hover:text-gray-800 text-2xl">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="prose max-w-none text-gray-700">
+                <h4 class="text-lg font-bold mt-6 mb-2 text-rfNavy">1. 한국어 개인정보처리방침 (대한민국 법률 준수)</h4>
+                <p class="text-sm">Road Financial은 「개인정보 보호법」 등 관련 법령을 준수하여 정보주체의 개인정보 보호 및 권익을 보장하고 개인정보와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같이 개인정보처리방침을 수립·공개합니다.</p>
+                
+                <h5 class="font-semibold text-base mt-4">1. 개인정보 수집 및 이용 목적</h5>
+                <ul class="list-disc ml-6 text-sm">
+                    <li>IT 컨설팅 및 서비스 개발 계약 이행, 상담, 문의 처리.</li>
+                    <li>eSIM 상품 판매 및 배송(QR코드 전송), 서비스 제공.</li>
+                </ul>
+
+                <h5 class="font-semibold text-base mt-4">2. 수집하는 개인정보 항목</h5>
+                <ul class="list-disc ml-6 text-sm">
+                    <li>필수 항목: 이름(회사명), 연락처, 이메일 주소.</li>
+                    <li>eSIM 구매 시: 단말기 정보, 결제 정보.</li>
+                </ul>
+
+                <h5 class="font-semibold text-base mt-4">3. 개인정보의 보유 및 이용 기간</h5>
+                <p class="text-sm">원칙적으로 개인정보 수집 및 이용 목적이 달성된 후에는 지체 없이 해당 정보를 파기합니다. 단, 상법, 전자상거래 등에서의 소비자보호에 관한 법률 등 법령에 의하여 보존할 필요가 있는 경우에는 관련 법령에 따라 보존합니다.</p>
+
+                <h5 class="font-semibold text-base mt-4">4. 개인정보 보호 책임자</h5>
+                <ul class="list-disc ml-6 text-sm">
+                    <li>성명: 홍길동 (가정)</li>
+                    <li>이메일: support@roadfinancial.co.kr</li>
+                </ul>
+
+                <hr class="my-6">
+
+                <h4 class="text-lg font-bold mt-6 mb-2 text-rfNavy">2. English Privacy Policy (Adherence to KR Law)</h4>
+                <p class="text-sm">Road Financial adheres to the Personal Information Protection Act of the Republic of Korea and other relevant laws, establishing and disclosing this Privacy Policy to ensure the protection and rights of data subjects' personal information and to promptly and smoothly handle related complaints.</p>
+
+                <h5 class="font-semibold text-base mt-4">1. Purpose of Personal Information Collection and Use</h5>
+                <ul class="list-disc ml-6 text-sm">
+                    <li>Fulfillment of contracts for IT consulting and service development, handling consultations and inquiries.</li>
+                    <li>Sale, delivery (QR code transmission) of eSIM products, and service provision.</li>
+                </ul>
+
+                <h5 class="font-semibold text-base mt-4">2. Items of Personal Information Collected</h5>
+                <ul class="list-disc ml-6 text-sm">
+                    <li>Required Items: Name (Company Name), Contact Number, Email Address.</li>
+                    <li>For eSIM Purchase: Device Information, Payment Information.</li>
+                </ul>
+
+                <h5 class="font-semibold text-base mt-4">3. Retention and Use Period of Personal Information</h5>
+                <p class="text-sm">In principle, personal information is destroyed without delay after the purpose of collection and use is achieved. However, information may be retained as required by laws such as the Commercial Act and the Act on Consumer Protection in Electronic Commerce, etc.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
